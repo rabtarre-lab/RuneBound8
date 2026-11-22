@@ -1,0 +1,46 @@
+# Название в префиксе сообщений плагина
+prefix: "Settings"
+
+# Права, дающие доступ к смене роста (группы sponsor и sponsor+ в LuckPerms)
+height-permissions:
+  - group.sponsor
+  - group.sponsor+
+  - settings.height
+
+# Часовой пояс для смены дня/недели заданий
+timezone: "Europe/Moscow"
+
+join:
+  hide-join-message: true    # убрать «Игрок зашёл в игру»
+  hide-quit-message: true    # убрать «Игрок вышел из игры»
+  welcome-title: true        # красивый заголовок при входе
+  quest-reminder: true       # напоминание о заданиях при входе
+
+quests:
+  daily-tiers: [1, 2, 3]       # сколько и какой сложности ежедневных заданий
+  weekly-tiers: [1, 2, 3, 3]   # то же для еженедельных
+  daily-bonus: 60              # бонус за все ежедневные
+  weekly-bonus: 300            # бонус за все еженедельные
+  autosave-minutes: 5
+  streak-bonuses:              # бонус за серию дней подряд
+    3: 30
+    7: 100
+    14: 250
+    30: 1000
+
+# Правила: книга при входе и по команде /rules (текст в rules.yml)
+rules:
+  enabled: true
+  show-every-join: true      # true = при каждом входе, false = только при первом
+  seconds-per-page: 3        # время на чтение одной страницы; потом книга закроется сама
+
+# Доступ к чужому: пока не выполнены задания, нельзя ломать и открывать
+# блоки, которые поставили другие игроки (права settings.bypass обходят запрет)
+access:
+  enabled: true
+  stone: 32                  # добыть камня
+  wood: 16                   # добыть дерева (брёвен)
+  iron: 8                    # добыть железной руды
+  nether: true               # посетить Незер (ад)
+  break-minutes: 15          # сколько минут отыграть, чтобы ломать чужое
+  open-minutes: 30           # сколько минут отыграть, чтобы открывать чужое

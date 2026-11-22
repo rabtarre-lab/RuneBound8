@@ -1,0 +1,28 @@
+name: Settings
+main: me.settings.SettingsPlugin
+version: 2.1
+api-version: '1.21'
+commands:
+  settings:
+    description: Меню настроек
+  quests:
+    description: Задания, награды и руны
+    aliases: [quest, zadaniya]
+  shop:
+    description: Магазин за руны
+    aliases: [magazin]
+  runes:
+    description: Баланс рун
+  rules:
+    description: Правила сервера
+    aliases: [pravila]
+  access:
+    description: Прогресс доступа к чужому
+    aliases: [dostup, unlock]
+permissions:
+  settings.admin:
+    description: Управление рунами и заданиями игроков
+    default: op
+  settings.bypass:
+    description: Обход ограничения на чужие блоки
+    default: op

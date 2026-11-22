@@ -1,0 +1,270 @@
+# ============================================================================
+#  ЗАДАНИЯ И МАГАЗИН. Файл можно свободно править.
+#
+#  type:    BREAK PLACE HARVEST KILL FISH CRAFT SMELT EAT ENCHANT BREED TAME
+#           SHEAR TRADE WALK(блоки) PLAYTIME(минуты) DIMENSION LEVEL ADVANCEMENT
+#  targets: список материалов / мобов / миров. Поддерживает шаблоны:
+#           "*" любой, "*_LOG" оканчивается на, "COOKED_*" начинается с, "*ORE*" содержит
+#  tier:    сложность 1-3 (для ежедневных и еженедельных, из каждого уровня берётся по одному)
+#  reward:  руны; item: "DIAMOND:3" (необязательно); xp: уровни опыта (необязательно)
+#  id:      уникальный, без точек и пробелов
+# ============================================================================
+
+# ------------------------------- ЕЖЕДНЕВНЫЕ ---------------------------------
+daily:
+  # --- лёгкие ---
+  - {id: d_wood, tier: 1, name: "Дровосек", type: BREAK, targets: ["*_LOG"], amount: 32, reward: 15, icon: OAK_LOG, desc: "Руби деревья"}
+  - {id: d_coal, tier: 1, name: "Угольщик", type: BREAK, targets: ["COAL_ORE", "DEEPSLATE_COAL_ORE"], amount: 24, reward: 18, icon: COAL, desc: "Добудь угольную руду"}
+  - {id: d_stone, tier: 1, name: "Каменотёс", type: BREAK, targets: ["STONE", "COBBLESTONE", "DEEPSLATE", "ANDESITE", "DIORITE", "GRANITE"], amount: 128, reward: 15, icon: COBBLESTONE, desc: "Накопай камня"}
+  - {id: d_fish, tier: 1, name: "Рыбак", type: FISH, targets: ["*"], amount: 5, reward: 20, icon: FISHING_ROD, desc: "Налови рыбы"}
+  - {id: d_cattle, tier: 1, name: "Скотник", type: KILL, targets: ["COW", "PIG", "SHEEP", "CHICKEN"], amount: 10, reward: 15, icon: BEEF, desc: "Забей скот"}
+  - {id: d_wheat, tier: 1, name: "Фермер", type: HARVEST, targets: ["WHEAT", "CARROTS", "POTATOES", "BEETROOTS"], amount: 40, reward: 18, icon: WHEAT, desc: "Собери спелый урожай"}
+  - {id: d_walk, tier: 1, name: "Путник", type: WALK, targets: ["*"], amount: 1000, reward: 20, icon: LEATHER_BOOTS, desc: "Пройди пешком"}
+  - {id: d_bread, tier: 1, name: "Пекарь", type: CRAFT, targets: ["BREAD"], amount: 6, reward: 15, icon: BREAD, desc: "Испеки хлеб"}
+  # --- средние ---
+  - {id: d_iron, tier: 2, name: "Железный рудокоп", type: BREAK, targets: ["IRON_ORE", "DEEPSLATE_IRON_ORE"], amount: 24, reward: 40, icon: IRON_INGOT, desc: "Добудь железную руду"}
+  - {id: d_undead, tier: 2, name: "Охотник на нежить", type: KILL, targets: ["ZOMBIE", "SKELETON", "ZOMBIE_VILLAGER", "HUSK", "DROWNED", "STRAY"], amount: 25, reward: 40, icon: ROTTEN_FLESH, desc: "Убей нежить"}
+  - {id: d_smelt, tier: 2, name: "Плавильщик", type: SMELT, targets: ["IRON_INGOT", "GOLD_INGOT", "COPPER_INGOT"], amount: 24, reward: 40, icon: FURNACE, desc: "Переплавь металл"}
+  - {id: d_breed, tier: 2, name: "Заводчик", type: BREED, targets: ["*"], amount: 4, reward: 40, icon: HAY_BLOCK, desc: "Размножь животных"}
+  - {id: d_trade, tier: 2, name: "Торговец", type: TRADE, targets: ["*"], amount: 3, reward: 40, icon: EMERALD, desc: "Соверши сделки с жителями"}
+  - {id: d_creeper, tier: 2, name: "Сапёр", type: KILL, targets: ["CREEPER"], amount: 8, reward: 45, icon: GUNPOWDER, desc: "Обезвредь криперов"}
+  - {id: d_play, tier: 2, name: "Старожил", type: PLAYTIME, targets: ["*"], amount: 30, reward: 45, icon: CLOCK, desc: "Проведи на сервере время (минуты)"}
+  - {id: d_cook, tier: 2, name: "Повар", type: EAT, targets: ["COOKED_*", "BREAD", "BAKED_POTATO"], amount: 10, reward: 35, icon: COOKED_BEEF, desc: "Съешь готовую еду"}
+  # --- сложные ---
+  - {id: d_diamond, tier: 3, name: "Алмазная лихорадка", type: BREAK, targets: ["DIAMOND_ORE", "DEEPSLATE_DIAMOND_ORE"], amount: 6, reward: 90, icon: DIAMOND, desc: "Добудь алмазную руду"}
+  - {id: d_nether, tier: 3, name: "Огненный путь", type: DIMENSION, targets: ["NETHER"], amount: 1, reward: 70, icon: OBSIDIAN, desc: "Загляни в Незер"}
+  - {id: d_night, tier: 3, name: "Ночной дозор", type: KILL, targets: ["SPIDER", "CAVE_SPIDER", "ENDERMAN", "WITCH", "PHANTOM"], amount: 15, reward: 80, icon: SPIDER_EYE, desc: "Победи ночных тварей"}
+  - {id: d_enchant, tier: 3, name: "Чародей", type: ENCHANT, targets: ["*"], amount: 3, reward: 80, icon: ENCHANTING_TABLE, desc: "Зачаруй предметы"}
+  - {id: d_gold, tier: 3, name: "Золотая жила", type: BREAK, targets: ["GOLD_ORE", "DEEPSLATE_GOLD_ORE", "NETHER_GOLD_ORE"], amount: 20, reward: 85, icon: GOLD_INGOT, desc: "Добудь золотую руду"}
+  - {id: d_bigfarm, tier: 3, name: "Хозяин полей", type: HARVEST, targets: ["*"], amount: 200, reward: 80, icon: GOLDEN_HOE, desc: "Собери большой урожай"}
+  - {id: d_marathon, tier: 3, name: "Марафонец", type: WALK, targets: ["*"], amount: 5000, reward: 80, icon: DIAMOND_BOOTS, desc: "Пройди большое расстояние"}
+
+# ------------------------------- ЕЖЕНЕДЕЛЬНЫЕ -------------------------------
+weekly:
+  - {id: w_wood, tier: 1, name: "Лесоруб недели", type: BREAK, targets: ["*_LOG"], amount: 512, reward: 120, icon: DIAMOND_AXE, desc: "Нарубай древесину"}
+  - {id: w_farm, tier: 1, name: "Урожайная неделя", type: HARVEST, targets: ["*"], amount: 400, reward: 130, icon: HAY_BLOCK, desc: "Собери урожай"}
+  - {id: w_fish, tier: 1, name: "Рыбный день", type: FISH, targets: ["*"], amount: 40, reward: 150, icon: COD, desc: "Налови рыбы"}
+  - {id: w_walk, tier: 1, name: "Дальняя дорога", type: WALK, targets: ["*"], amount: 15000, reward: 140, icon: IRON_BOOTS, desc: "Пройди пешком"}
+  - {id: w_play, tier: 1, name: "Постоянный житель", type: PLAYTIME, targets: ["*"], amount: 180, reward: 140, icon: CLOCK, desc: "Проведи время на сервере (минуты)"}
+  - {id: w_iron, tier: 2, name: "Железный король", type: BREAK, targets: ["IRON_ORE", "DEEPSLATE_IRON_ORE"], amount: 160, reward: 250, icon: IRON_BLOCK, desc: "Добудь железную руду"}
+  - {id: w_mobs, tier: 2, name: "Зачистка", type: KILL, targets: ["*"], amount: 150, reward: 260, icon: IRON_SWORD, desc: "Убей любых мобов"}
+  - {id: w_craft, tier: 2, name: "Мастеровой", type: CRAFT, targets: ["*"], amount: 150, reward: 230, icon: CRAFTING_TABLE, desc: "Создай предметы"}
+  - {id: w_smelt, tier: 2, name: "Горячая печь", type: SMELT, targets: ["*"], amount: 192, reward: 250, icon: BLAST_FURNACE, desc: "Переплавь предметы"}
+  - {id: w_breed, tier: 2, name: "Большое стадо", type: BREED, targets: ["*"], amount: 20, reward: 260, icon: WHEAT, desc: "Размножь животных"}
+  - {id: w_trade, tier: 2, name: "Купец", type: TRADE, targets: ["*"], amount: 20, reward: 270, icon: EMERALD_BLOCK, desc: "Торгуй с жителями"}
+  - {id: w_diamond, tier: 3, name: "Алмазный магнат", type: BREAK, targets: ["DIAMOND_ORE", "DEEPSLATE_DIAMOND_ORE"], amount: 40, reward: 500, item: "DIAMOND:2", icon: DIAMOND_BLOCK, desc: "Добудь алмазную руду"}
+  - {id: w_level, tier: 3, name: "Мудрец", type: LEVEL, targets: ["*"], amount: 30, reward: 450, icon: EXPERIENCE_BOTTLE, desc: "Достигни 30 уровня опыта"}
+  - {id: w_skel, tier: 3, name: "Крепость Незера", type: KILL, targets: ["WITHER_SKELETON"], amount: 10, reward: 500, icon: WITHER_SKELETON_SKULL, desc: "Убей скелетов-иссушителей"}
+  - {id: w_raid, tier: 3, name: "Защитник деревни", type: KILL, targets: ["PILLAGER", "VINDICATOR", "EVOKER", "RAVAGER", "VEX"], amount: 40, reward: 450, icon: CROSSBOW, desc: "Победи налётчиков"}
+  - {id: w_ench, tier: 3, name: "Зачарователь", type: ENCHANT, targets: ["*"], amount: 15, reward: 450, icon: ENCHANTED_BOOK, desc: "Зачаруй предметы"}
+  - {id: w_nether, tier: 3, name: "Гость преисподней", type: DIMENSION, targets: ["NETHER"], amount: 3, reward: 400, icon: NETHERRACK, desc: "Побывай в Незере несколько раз"}
+
+# --------------------------------- ЦЕПОЧКИ ----------------------------------
+chains:
+  - id: newbie
+    name: "Путь новичка"
+    icon: GRASS_BLOCK
+    desc: "Те же задания, что открывают доступ к чужому, но с наградой."
+    steps:
+      - {id: ch_n1, name: "Первый камень", type: BREAK, targets: ["STONE", "COBBLESTONE", "DEEPSLATE", "ANDESITE", "DIORITE", "GRANITE"], amount: 32, reward: 25, icon: COBBLESTONE, desc: "Добудь 32 камня"}
+      - {id: ch_n2, name: "Свой дом из дерева", type: BREAK, targets: ["*_LOG"], amount: 16, reward: 25, icon: OAK_LOG, desc: "Добудь 16 дерева"}
+      - {id: ch_n3, name: "Первое железо", type: BREAK, targets: ["IRON_ORE", "DEEPSLATE_IRON_ORE"], amount: 8, reward: 40, icon: IRON_INGOT, desc: "Добудь 8 железа"}
+      - {id: ch_n4, name: "Дорога в ад", type: DIMENSION, targets: ["NETHER"], amount: 1, reward: 60, icon: NETHERRACK, desc: "Посети Незер"}
+      - {id: ch_n5, name: "Обжился", type: PLAYTIME, targets: ["*"], amount: 30, reward: 80, item: "COOKED_BEEF:16", icon: CLOCK, desc: "Отыграй 30 минут"}
+  - id: miner
+    name: "Путь шахтёра"
+    icon: IRON_PICKAXE
+    desc: "От булыжника до алмазов."
+    steps:
+      - {id: ch_m1, name: "Первый камень", type: BREAK, targets: ["STONE", "COBBLESTONE", "DEEPSLATE"], amount: 100, reward: 30, icon: STONE_PICKAXE, desc: "Накопай камня"}
+      - {id: ch_m2, name: "Чёрное золото", type: BREAK, targets: ["COAL_ORE", "DEEPSLATE_COAL_ORE"], amount: 64, reward: 50, icon: COAL, desc: "Добудь угля"}
+      - {id: ch_m3, name: "Железный век", type: BREAK, targets: ["IRON_ORE", "DEEPSLATE_IRON_ORE"], amount: 64, reward: 90, icon: IRON_INGOT, desc: "Добудь железа"}
+      - {id: ch_m4, name: "Блеск золота", type: BREAK, targets: ["GOLD_ORE", "DEEPSLATE_GOLD_ORE", "NETHER_GOLD_ORE", "LAPIS_ORE", "DEEPSLATE_LAPIS_ORE"], amount: 40, reward: 140, icon: GOLD_INGOT, desc: "Добудь золото и лазурит"}
+      - {id: ch_m5, name: "Алмазный век", type: BREAK, targets: ["DIAMOND_ORE", "DEEPSLATE_DIAMOND_ORE"], amount: 20, reward: 300, item: "DIAMOND:3", xp: 3, icon: DIAMOND_PICKAXE, desc: "Добудь алмазы"}
+  - id: hunter
+    name: "Путь охотника"
+    icon: DIAMOND_SWORD
+    desc: "Очисти мир от чудовищ."
+    steps:
+      - {id: ch_h1, name: "Ночные гости", type: KILL, targets: ["ZOMBIE", "HUSK", "DROWNED"], amount: 30, reward: 40, icon: ROTTEN_FLESH, desc: "Убей зомби"}
+      - {id: ch_h2, name: "Костяной дождь", type: KILL, targets: ["SKELETON", "STRAY"], amount: 25, reward: 60, icon: BONE, desc: "Убей скелетов"}
+      - {id: ch_h3, name: "Тише воды", type: KILL, targets: ["CREEPER"], amount: 20, reward: 90, icon: GUNPOWDER, desc: "Победи криперов"}
+      - {id: ch_h4, name: "Не смотри в глаза", type: KILL, targets: ["ENDERMAN"], amount: 10, reward: 140, icon: ENDER_PEARL, desc: "Победи эндерменов"}
+      - {id: ch_h5, name: "Повелитель огня", type: KILL, targets: ["BLAZE"], amount: 15, reward: 300, item: "BLAZE_ROD:4", icon: BLAZE_ROD, desc: "Убей ифритов в Незере"}
+  - id: farmer
+    name: "Путь фермера"
+    icon: GOLDEN_HOE
+    desc: "Земля щедра к трудолюбивым."
+    steps:
+      - {id: ch_f1, name: "Золотые колосья", type: HARVEST, targets: ["WHEAT"], amount: 64, reward: 30, icon: WHEAT, desc: "Собери пшеницу"}
+      - {id: ch_f2, name: "Корнеплоды", type: HARVEST, targets: ["CARROTS", "POTATOES", "BEETROOTS"], amount: 96, reward: 50, icon: CARROT, desc: "Собери морковь, картофель, свёклу"}
+      - {id: ch_f3, name: "Большое стадо", type: BREED, targets: ["*"], amount: 10, reward: 80, icon: HAY_BLOCK, desc: "Размножь животных"}
+      - {id: ch_f4, name: "Сытный стол", type: EAT, targets: ["COOKED_*", "BREAD", "BAKED_POTATO", "PUMPKIN_PIE"], amount: 20, reward: 100, icon: COOKED_BEEF, desc: "Съешь готовые блюда"}
+      - {id: ch_f5, name: "Верные друзья", type: TAME, targets: ["WOLF", "CAT", "PARROT", "HORSE", "DONKEY"], amount: 2, reward: 200, icon: BONE, desc: "Приручи питомцев"}
+  - id: explorer
+    name: "Путь странника"
+    icon: COMPASS
+    desc: "Мир велик, и он ждёт тебя."
+    steps:
+      - {id: ch_e1, name: "Первые шаги", type: WALK, targets: ["*"], amount: 2000, reward: 30, icon: LEATHER_BOOTS, desc: "Пройди пешком"}
+      - {id: ch_e2, name: "Дальние края", type: WALK, targets: ["*"], amount: 8000, reward: 80, icon: IRON_BOOTS, desc: "Пройди ещё дальше"}
+      - {id: ch_e3, name: "Врата в Незер", type: DIMENSION, targets: ["NETHER"], amount: 1, reward: 120, icon: OBSIDIAN, desc: "Войди в Незер"}
+      - {id: ch_e4, name: "Край мира", type: DIMENSION, targets: ["THE_END"], amount: 1, reward: 250, icon: END_STONE, desc: "Войди в Энд"}
+      - {id: ch_e5, name: "Коллекционер событий", type: ADVANCEMENT, targets: ["*"], amount: 20, reward: 300, xp: 5, icon: KNOWLEDGE_BOOK, desc: "Получи достижения"}
+  - id: master
+    name: "Путь мастера"
+    icon: ENCHANTING_TABLE
+    desc: "Ремесло, магия и торговля."
+    steps:
+      - {id: ch_ma1, name: "Кузнец", type: CRAFT, targets: ["*_PICKAXE", "*_AXE", "*_SWORD", "*_SHOVEL"], amount: 5, reward: 40, icon: ANVIL, desc: "Создай инструменты и оружие"}
+      - {id: ch_ma2, name: "Жар печей", type: SMELT, targets: ["*"], amount: 64, reward: 60, icon: FURNACE, desc: "Переплавь предметы"}
+      - {id: ch_ma3, name: "Первые чары", type: ENCHANT, targets: ["*"], amount: 5, reward: 100, icon: ENCHANTING_TABLE, desc: "Зачаруй предметы"}
+      - {id: ch_ma4, name: "Торговая жилка", type: TRADE, targets: ["*"], amount: 15, reward: 150, icon: EMERALD, desc: "Соверши сделки"}
+      - {id: ch_ma5, name: "Великий мудрец", type: LEVEL, targets: ["*"], amount: 30, reward: 350, item: "EXPERIENCE_BOTTLE:16", icon: EXPERIENCE_BOTTLE, desc: "Достигни 30 уровня"}
+  - id: dragon
+    name: "Путь убийцы драконов"
+    icon: DRAGON_HEAD
+    desc: "Главная легенда сервера."
+    steps:
+      - {id: ch_d1, name: "Тёмная крепость", type: KILL, targets: ["WITHER_SKELETON"], amount: 5, reward: 100, icon: WITHER_SKELETON_SKULL, desc: "Убей скелетов-иссушителей"}
+      - {id: ch_d2, name: "Огненный нрав", type: KILL, targets: ["BLAZE"], amount: 20, reward: 150, icon: BLAZE_ROD, desc: "Убей ифритов"}
+      - {id: ch_d3, name: "Слёзы призрака", type: KILL, targets: ["GHAST"], amount: 5, reward: 250, icon: GHAST_TEAR, desc: "Убей гастов"}
+      - {id: ch_d4, name: "Победитель Иссушителя", type: KILL, targets: ["WITHER"], amount: 1, reward: 600, item: "NETHER_STAR:1", icon: NETHER_STAR, desc: "Победи Иссушителя"}
+      - {id: ch_d5, name: "Убийца дракона", type: KILL, targets: ["ENDER_DRAGON"], amount: 1, reward: 1000, item: "DRAGON_EGG:1", xp: 10, icon: DRAGON_EGG, desc: "Победи Дракона Края"}
+
+# ------------------------------- ДОСТИЖЕНИЯ ---------------------------------
+achievements:
+  - {id: a_lumber, name: "Лесной гигант", type: BREAK, targets: ["*_LOG"], amount: 2000, reward: 300, icon: DIAMOND_AXE, desc: "Срубить 2000 брёвен"}
+  - {id: a_miner, name: "Глубинный шахтёр", type: BREAK, targets: ["*_ORE"], amount: 2000, reward: 400, icon: NETHERITE_PICKAXE, desc: "Добыть 2000 руд"}
+  - {id: a_diamond, name: "Алмазный барон", type: BREAK, targets: ["DIAMOND_ORE", "DEEPSLATE_DIAMOND_ORE"], amount: 100, reward: 500, item: "DIAMOND:5", icon: DIAMOND, desc: "Добыть 100 алмазных руд"}
+  - {id: a_debris, name: "Древний искатель", type: BREAK, targets: ["ANCIENT_DEBRIS"], amount: 20, reward: 600, item: "NETHERITE_SCRAP:2", icon: ANCIENT_DEBRIS, desc: "Добыть 20 древних обломков"}
+  - {id: a_emerald, name: "Изумрудная лихорадка", type: BREAK, targets: ["EMERALD_ORE", "DEEPSLATE_EMERALD_ORE"], amount: 10, reward: 250, icon: EMERALD_ORE, desc: "Добыть 10 изумрудных руд"}
+  - {id: a_builder, name: "Архитектор", type: PLACE, targets: ["*"], amount: 5000, reward: 300, icon: BRICKS, desc: "Поставить 5000 блоков"}
+  - {id: a_slayer, name: "Истребитель", type: KILL, targets: ["*"], amount: 1000, reward: 500, icon: IRON_SWORD, desc: "Убить 1000 мобов"}
+  - {id: a_duel, name: "Дуэлянт", type: KILL, targets: ["PLAYER"], amount: 25, reward: 400, icon: TOTEM_OF_UNDYING, desc: "Победить 25 игроков"}
+  - {id: a_wither, name: "Гроза Иссушителей", type: KILL, targets: ["WITHER"], amount: 3, reward: 800, icon: NETHER_STAR, desc: "Победить Иссушителя 3 раза"}
+  - {id: a_dragon, name: "Конец эры", type: KILL, targets: ["ENDER_DRAGON"], amount: 1, reward: 1000, icon: DRAGON_HEAD, desc: "Победить Дракона Края"}
+  - {id: a_warden, name: "Тише тишины", type: KILL, targets: ["WARDEN"], amount: 1, reward: 1200, icon: SCULK_SHRIEKER, desc: "Победить Стража"}
+  - {id: a_elder, name: "Морской страж", type: KILL, targets: ["ELDER_GUARDIAN"], amount: 1, reward: 700, icon: SPONGE, desc: "Победить древнего стража"}
+  - {id: a_fisher, name: "Мастер-рыбак", type: FISH, targets: ["*"], amount: 300, reward: 350, icon: FISHING_ROD, desc: "Выловить 300 раз"}
+  - {id: a_treasure, name: "Сокровища глубин", type: FISH, targets: ["ENCHANTED_BOOK", "NAME_TAG", "SADDLE", "NAUTILUS_SHELL", "BOW", "FISHING_ROD"], amount: 5, reward: 400, icon: NAUTILUS_SHELL, desc: "Выловить 5 сокровищ"}
+  - {id: a_farmer, name: "Король полей", type: HARVEST, targets: ["*"], amount: 3000, reward: 350, icon: DIAMOND_HOE, desc: "Собрать 3000 урожая"}
+  - {id: a_breeder, name: "Большая ферма", type: BREED, targets: ["*"], amount: 100, reward: 300, icon: HAY_BLOCK, desc: "Размножить 100 животных"}
+  - {id: a_tamer, name: "Друг животных", type: TAME, targets: ["*"], amount: 10, reward: 300, icon: BONE, desc: "Приручить 10 питомцев"}
+  - {id: a_trader, name: "Торговый магнат", type: TRADE, targets: ["*"], amount: 150, reward: 500, icon: EMERALD, desc: "Совершить 150 сделок"}
+  - {id: a_enchanter, name: "Архимаг", type: ENCHANT, targets: ["*"], amount: 50, reward: 450, icon: ENCHANTING_TABLE, desc: "Зачаровать 50 раз"}
+  - {id: a_smelter, name: "Мастер печи", type: SMELT, targets: ["*"], amount: 1500, reward: 300, icon: BLAST_FURNACE, desc: "Переплавить 1500 предметов"}
+  - {id: a_crafter, name: "Бесконечный верстак", type: CRAFT, targets: ["*"], amount: 2000, reward: 300, icon: CRAFTING_TABLE, desc: "Создать 2000 предметов"}
+  - {id: a_walker, name: "Кругосветка", type: WALK, targets: ["*"], amount: 100000, reward: 600, icon: LEATHER_BOOTS, desc: "Пройти 100000 блоков"}
+  - {id: a_oldtimer, name: "Ветеран сервера", type: PLAYTIME, targets: ["*"], amount: 6000, reward: 800, icon: CLOCK, desc: "Наиграть 100 часов"}
+  - {id: a_level, name: "Просвещённый", type: LEVEL, targets: ["*"], amount: 50, reward: 500, icon: EXPERIENCE_BOTTLE, desc: "Достичь 50 уровня опыта"}
+  - {id: a_adv, name: "Охотник за достижениями", type: ADVANCEMENT, targets: ["*"], amount: 60, reward: 700, icon: KNOWLEDGE_BOOK, desc: "Получить 60 достижений"}
+  - {id: a_nether, name: "Постоянный гость Незера", type: DIMENSION, targets: ["NETHER"], amount: 25, reward: 250, icon: NETHER_BRICKS, desc: "Посетить Незер 25 раз"}
+  - {id: a_end, name: "Путешественник по Энду", type: DIMENSION, targets: ["THE_END"], amount: 5, reward: 400, icon: END_STONE, desc: "Посетить Энд 5 раз"}
+  - {id: a_shear, name: "Стригаль", type: SHEAR, targets: ["*"], amount: 150, reward: 250, icon: SHEARS, desc: "Остричь 150 раз"}
+  - {id: a_gourmet, name: "Гурман", type: EAT, targets: ["*"], amount: 500, reward: 300, icon: GOLDEN_CARROT, desc: "Съесть 500 блюд"}
+  - {id: a_creeper, name: "Укротитель криперов", type: KILL, targets: ["CREEPER"], amount: 250, reward: 400, icon: CREEPER_HEAD, desc: "Убить 250 криперов"}
+  - {id: a_ender, name: "Охотник на эндерменов", type: KILL, targets: ["ENDERMAN"], amount: 100, reward: 400, icon: ENDER_PEARL, desc: "Убить 100 эндерменов"}
+  - {id: a_raid, name: "Страж деревень", type: KILL, targets: ["PILLAGER", "VINDICATOR", "EVOKER", "RAVAGER", "VEX"], amount: 150, reward: 600, icon: CROSSBOW, desc: "Победить 150 налётчиков"}
+  - {id: a_blaze, name: "Гроза ифритов", type: KILL, targets: ["BLAZE"], amount: 80, reward: 450, icon: BLAZE_ROD, desc: "Убить 80 ифритов"}
+  - {id: a_ghast, name: "Слёзы Незера", type: KILL, targets: ["GHAST"], amount: 15, reward: 500, icon: GHAST_TEAR, desc: "Убить 15 гастов"}
+
+# --------------------------------- МАГАЗИН ----------------------------------
+# give: "МАТЕРИАЛ:кол-во"   effect: "ЭФФЕКТ:уровень:секунды"   trail: частица-след (покупается навсегда)
+# commands: команды от консоли, {player} — ник покупателя. Пример (раскомментируй и поправь):
+#   - {id: vip_home, name: "Лишний дом", icon: RED_BED, price: 2000, once: true, desc: ["Ещё одна точка дома"], commands: ["lp user {player} permission set essentials.sethome.multiple.extra true"]}
+shop:
+  - id: res
+    name: "Ресурсы"
+    icon: CHEST
+    desc: ["§7Полезные материалы."]
+    items:
+      - {name: "Железо ×16", icon: IRON_INGOT, price: 60, give: "IRON_INGOT:16"}
+      - {name: "Золото ×16", icon: GOLD_INGOT, price: 80, give: "GOLD_INGOT:16"}
+      - {name: "Алмазы ×2", icon: DIAMOND, price: 250, give: "DIAMOND:2"}
+      - {name: "Золотые яблоки ×2", icon: GOLDEN_APPLE, price: 150, give: "GOLDEN_APPLE:2"}
+      - {name: "Эндер-жемчуг ×4", icon: ENDER_PEARL, price: 120, give: "ENDER_PEARL:4"}
+      - {name: "Бутылочки опыта ×16", icon: EXPERIENCE_BOTTLE, price: 140, give: "EXPERIENCE_BOTTLE:16"}
+      - {name: "Фейерверки ×16", icon: FIREWORK_ROCKET, price: 90, give: "FIREWORK_ROCKET:16"}
+      - {name: "Именные бирки ×3", icon: NAME_TAG, price: 90, give: "NAME_TAG:3"}
+      - {name: "Эндер-сундук", icon: ENDER_CHEST, price: 300, give: "ENDER_CHEST:1"}
+      - {name: "Шалкеровый ящик", icon: SHULKER_BOX, price: 700, give: "SHULKER_BOX:1"}
+      - {name: "Тотем бессмертия", icon: TOTEM_OF_UNDYING, price: 900, give: "TOTEM_OF_UNDYING:1"}
+      - {name: "Незеритовый слиток", icon: NETHERITE_INGOT, price: 1200, give: "NETHERITE_INGOT:1"}
+      - {name: "Зачарованное яблоко", icon: ENCHANTED_GOLDEN_APPLE, price: 1500, give: "ENCHANTED_GOLDEN_APPLE:1"}
+  - id: boost
+    name: "Бусты"
+    icon: POTION
+    desc: ["§7Временные эффекты."]
+    items:
+      - {name: "Скорость II (10 мин)", icon: SUGAR, price: 80, effect: "SPEED:2:600"}
+      - {name: "Спешка II (10 мин)", icon: GOLDEN_PICKAXE, price: 100, effect: "HASTE:2:600"}
+      - {name: "Сила I (5 мин)", icon: BLAZE_POWDER, price: 150, effect: "STRENGTH:1:300"}
+      - {name: "Прыгучесть II (10 мин)", icon: RABBIT_FOOT, price: 60, effect: "JUMP_BOOST:2:600"}
+      - {name: "Ночное зрение (30 мин)", icon: GOLDEN_CARROT, price: 60, effect: "NIGHT_VISION:1:1800"}
+      - {name: "Подводное дыхание (30 мин)", icon: PUFFERFISH, price: 60, effect: "WATER_BREATHING:1:1800"}
+      - {name: "Огнестойкость (30 мин)", icon: MAGMA_CREAM, price: 70, effect: "FIRE_RESISTANCE:1:1800"}
+      - {name: "Регенерация II (2 мин)", icon: GHAST_TEAR, price: 120, effect: "REGENERATION:2:120"}
+      - {name: "Удача II (15 мин)", icon: EMERALD, price: 100, effect: "LUCK:2:900"}
+      - {name: "Насыщение (30 сек)", icon: COOKED_BEEF, price: 40, effect: "SATURATION:1:30"}
+  - id: trails
+    name: "Эффекты-следы"
+    icon: BLAZE_POWDER
+    desc: ["§7Частицы за спиной. Покупаются", "§7навсегда, можно менять."]
+    items:
+      - {id: trail_end_rod, name: "След: Искры", icon: END_ROD, price: 300, trail: END_ROD}
+      - {id: trail_flame, name: "След: Пламя", icon: BLAZE_POWDER, price: 400, trail: FLAME}
+      - {id: trail_soul, name: "След: Души", icon: SOUL_LANTERN, price: 450, trail: SOUL_FIRE_FLAME}
+      - {id: trail_heart, name: "След: Сердца", icon: PINK_DYE, price: 500, trail: HEART}
+      - {id: trail_note, name: "След: Ноты", icon: NOTE_BLOCK, price: 350, trail: NOTE}
+      - {id: trail_portal, name: "След: Портал", icon: ENDER_EYE, price: 400, trail: PORTAL}
+      - {id: trail_enchant, name: "След: Чары", icon: ENCHANTING_TABLE, price: 450, trail: ENCHANT}
+      - {id: trail_cherry, name: "След: Сакура", icon: CHERRY_LEAVES, price: 600, trail: CHERRY_LEAVES}
+      - {id: trail_snow, name: "След: Снежинки", icon: SNOWBALL, price: 350, trail: SNOWFLAKE}
+      - {id: trail_witch, name: "След: Магия", icon: AMETHYST_SHARD, price: 400, trail: WITCH}
+      - {id: trail_glow, name: "След: Свечение", icon: GLOW_INK_SAC, price: 450, trail: GLOW}
+      - {id: trail_sculk, name: "След: Души скалка", icon: SOUL_SAND, price: 500, trail: SCULK_SOUL}
+      - {id: trail_spark, name: "След: Молнии", icon: LIGHTNING_ROD, price: 550, trail: ELECTRIC_SPARK}
+      - {id: trail_crit, name: "След: Искры удара", icon: IRON_SWORD, price: 350, trail: CRIT}
+      - {id: trail_ink, name: "След: Чернила", icon: INK_SAC, price: 350, trail: SQUID_INK}
+      - {id: trail_spore, name: "След: Споры", icon: SPORE_BLOSSOM, price: 500, trail: SPORE_BLOSSOM_AIR}
+  - id: nick
+    name: "Цвет ника"
+    icon: NAME_TAG
+    desc: ["§7Цвет ника над головой и в табе.", "§7Не работает, если ник скрыт."]
+    items:
+      - {id: nick_gold, name: "Ник: Золотой", icon: GOLD_INGOT, price: 250, nick: GOLD}
+      - {id: nick_aqua, name: "Ник: Бирюзовый", icon: DIAMOND, price: 250, nick: AQUA}
+      - {id: nick_green, name: "Ник: Зелёный", icon: LIME_DYE, price: 250, nick: GREEN}
+      - {id: nick_red, name: "Ник: Красный", icon: REDSTONE, price: 250, nick: RED}
+      - {id: nick_pink, name: "Ник: Розовый", icon: PINK_DYE, price: 250, nick: LIGHT_PURPLE}
+      - {id: nick_yellow, name: "Ник: Жёлтый", icon: YELLOW_DYE, price: 250, nick: YELLOW}
+      - {id: nick_blue, name: "Ник: Синий", icon: LAPIS_LAZULI, price: 250, nick: BLUE}
+      - {id: nick_purple, name: "Ник: Фиолетовый", icon: PURPLE_DYE, price: 250, nick: DARK_PURPLE}
+  - id: titles
+    name: "Титулы в чате"
+    icon: WRITABLE_BOOK
+    desc: ["§7Красивая приставка перед ником", "§7в чате."]
+    items:
+      - {id: title_hero, name: "Титул: Герой", icon: GOLDEN_HELMET, price: 600, title: "§e★ Герой ★"}
+      - {id: title_miner, name: "Титул: Шахтёр", icon: DIAMOND_PICKAXE, price: 500, title: "§3♦ Шахтёр ♦"}
+      - {id: title_farmer, name: "Титул: Фермер", icon: GOLDEN_HOE, price: 500, title: "§a✿ Фермер ✿"}
+      - {id: title_hunter, name: "Титул: Охотник", icon: BOW, price: 600, title: "§c☠ Охотник ☠"}
+      - {id: title_mage, name: "Титул: Маг", icon: ENCHANTING_TABLE, price: 700, title: "§5✦ Маг ✦"}
+      - {id: title_warrior, name: "Титул: Воин", icon: IRON_SWORD, price: 700, title: "§9⚔ Воин ⚔"}
+      - {id: title_cute, name: "Титул: Милаха", icon: PINK_TULIP, price: 500, title: "§d❤ Милаха ❤"}
+      - {id: title_wander, name: "Титул: Странник", icon: COMPASS, price: 500, title: "§f☽ Странник ☽"}
+      - {id: title_sun, name: "Титул: Солнечный", icon: SUNFLOWER, price: 600, title: "§6☀ Солнечный ☀"}
+      - {id: title_legend, name: "Титул: Легенда", icon: NETHER_STAR, price: 1500, title: "§6§l✦ ЛЕГЕНДА ✦"}
+  - id: killfx
+    name: "Эффекты убийства"
+    icon: TOTEM_OF_UNDYING
+    desc: ["§7Красивый эффект, когда ты", "§7убиваешь моба или игрока."]
+    items:
+      - {id: kill_lightning, name: "Убийство: Молния", icon: LIGHTNING_ROD, price: 600, killfx: LIGHTNING}
+      - {id: kill_heart, name: "Убийство: Сердца", icon: PINK_DYE, price: 400, killfx: HEART}
+      - {id: kill_flame, name: "Убийство: Пламя", icon: BLAZE_POWDER, price: 400, killfx: FLAME}
+      - {id: kill_soul, name: "Убийство: Души", icon: SOUL_LANTERN, price: 450, killfx: SOUL_FIRE_FLAME}
+      - {id: kill_totem, name: "Убийство: Тотем", icon: TOTEM_OF_UNDYING, price: 700, killfx: TOTEM_OF_UNDYING}
+      - {id: kill_rod, name: "Убийство: Искры", icon: END_ROD, price: 400, killfx: END_ROD}
+      - {id: kill_crit, name: "Убийство: Крит", icon: IRON_SWORD, price: 350, killfx: CRIT}
